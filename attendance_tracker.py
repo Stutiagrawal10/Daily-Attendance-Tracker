@@ -27,6 +27,8 @@ class Bot():
         driver.find_element(By.ID,"password-1").send_keys(self.GEMS_PASSWORD)
         driver.find_element(By.ID,"password-1").send_keys(Keys.RETURN)
 
+        driver.get("https://rcoem.in/home.htm?prevPage=true")
+
         driver.find_element(By.ID,"stud2").click() 
 
         time.sleep(10)
@@ -59,6 +61,6 @@ class Bot():
         server = smtplib.SMTP('smtp.gmail.com',587)
         server.starttls()
         server.login(self.SENDERS_EMAIL,self.SENDERS_PASSWORD)
-        server.sendmail(self.SENDERS_EMAIL,self.GEMS_EMAIL,msgRoot.as_string())
+        server.sendmail(self.SENDERS_EMAIL,self.SENDERS_EMAIL,msgRoot.as_string())
         server.quit()
 
